@@ -7,9 +7,9 @@ local UserInputService = game:GetService("UserInputService")
 local player = Players.LocalPlayer
 
 -- Config
-local customWalkSpeed = 60
-local ballSpeed = 60 -- speed com bola
-local reachSize = 4.0
+local customWalkSpeed = 65
+local ballSpeed = 65 -- speed com bola
+local reachSize = 4.5
 local hipHeightValue = 1.8
 
 local isInfiniteStamina = true
