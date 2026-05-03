@@ -1,0 +1,65 @@
+local player = game.Players.LocalPlayer
+local UIS = game:GetService("UserInputService")
+
+local jumpHeight = 60   
+local canAdjust = true
+
+local function boostJump()
+    local char = player.Character
+    if not char then return end
+    local root = char:FindFirstChild("HumanoidRootPart")
+    local hum = char:FindFirstChild("Humanoid")
+    
+    if root and hum and hum:GetState() == Enum.HumanoidStateType.Jumping then
+        root.Velocity = Vector3.new(root.Velocity.X, jumpHeight, root.Velocity.Z)
+    end
+end
+
+UIS.JumpRequest:Connect(boostJump)
+
+-- Teclas pra ajustar altura
+UIS.InputBegan:Connect(function(input, gp)
+    if gp then return end
+    if input.KeyCode == Enum.KeyCode.K then
+        jumpHeight = jumpHeight - 5
+        print("🔽 Altura diminuída: " .. jumpHeight)
+    elseif input.KeyCode == Enum.KeyCode.L then
+        jumpHeight = jumpHeight + 5
+        print("🔼 Altura aumentada: " .. jumpHeight)
+    end
+end)
+
+print("✅ High Jump carregado!")
+print("Pressione K = pular menos | L = pular mais")local player = game.Players.LocalPlayer
+local UIS = game:GetService("UserInputService")
+
+local jumpHeight = 60   
+local canAdjust = true
+
+local function boostJump()
+    local char = player.Character
+    if not char then return end
+    local root = char:FindFirstChild("HumanoidRootPart")
+    local hum = char:FindFirstChild("Humanoid")
+    
+    if root and hum and hum:GetState() == Enum.HumanoidStateType.Jumping then
+        root.Velocity = Vector3.new(root.Velocity.X, jumpHeight, root.Velocity.Z)
+    end
+end
+
+UIS.JumpRequest:Connect(boostJump)
+
+-- Teclas pra ajustar altura
+UIS.InputBegan:Connect(function(input, gp)
+    if gp then return end
+    if input.KeyCode == Enum.KeyCode.K then
+        jumpHeight = jumpHeight - 5
+        print("🔽 Altura diminuída: " .. jumpHeight)
+    elseif input.KeyCode == Enum.KeyCode.L then
+        jumpHeight = jumpHeight + 5
+        print("🔼 Altura aumentada: " .. jumpHeight)
+    end
+end)
+
+print("✅ High Jump carregado!")
+print("Pressione K = pular menos | L = pular mais")
