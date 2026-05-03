@@ -1,7 +1,7 @@
 local player = game.Players.LocalPlayer
 local UIS = game:GetService("UserInputService")
 
-local jumpHeight = 68   
+local jumpHeight = 57 
 local canAdjust = true
 
 local function boostJump()
